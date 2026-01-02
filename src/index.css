@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-black text-gray-100;
+  }
+}
+
+/* Global Animations and Effects */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.05; }
+  50% { opacity: 0.15; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(150, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 0, 0, 0.9);
+}
+
+/* Hit animation for fighters */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+.animate-shake {
+  animation: shake 0.2s ease-in-out;
+}
+
+/* Fatality animation */
+@keyframes fatality {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.animate-fatality {
+  animation: fatality 0.5s ease-in-out;
+}
+
+/* Glassmorphic effect */
+.glassmorphic {
+  background: rgba(15, 15, 30, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neon Glow (general) */
+.neon-glow {
+  text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ff0000, 0 0 30px #ff0000;
+}
+
+/* Neon Glow (red variant for button hover) */
+.neon-glow-red {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.5), 0 0 45px rgba(255, 0, 0, 0.3);
+}
+
+/* Blood smear effect (for Home/Welcome) */
+.blood-smear {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q40,20 60,50 T100,50" stroke="rgba(150,0,0,0.3)" stroke-width="8" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: center;
+}
+
+/* Background pattern for Welcome page */
+.bg-pattern-blood {
+  background-image: radial-gradient(circle at center, rgba(150,0,0,0.1) 0%, transparent 70%),
+                    repeating-linear-gradient(45deg, rgba(255,0,0,0.02) 0, rgba(255,0,0,0.02) 2px, transparent 2px, transparent 10px);
+  background-size: 100% 100%, 20px 20px;
+}
